@@ -2,6 +2,13 @@
 
 The scope of this project is provide a Web UI for wealth management using NetworthDB.
 
+## Setup
+
+1. [Install Node & npm](https://github.com/nvm-sh/nvm)
+2. Install pnpm: `npm install -g pnpm`
+3. Install dependencies: `pnpm install`
+4. Run server: `pnpm dev`
+
 ## License
 
 NetworthDOM is licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE).
