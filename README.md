@@ -7,7 +7,8 @@ The scope of this project is provide a Web UI for wealth management using Networ
 1. [Install Node & npm](https://github.com/nvm-sh/nvm)
 2. Install pnpm: `npm install -g pnpm`
 3. Install dependencies: `pnpm install`
-4. Run server: `pnpm dev`
+4. Change `.env.sample` to `.env` and set the environment variables.
+5. Run server: `pnpm dev`
 
 ## License
 
