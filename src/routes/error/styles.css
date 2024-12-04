@@ -1,3 +1,4 @@
+
 .error-page {
   height: 100vh;
   display: flex;
@@ -16,17 +17,6 @@
   font-size: 3rem;
   color: #343a40;
   margin-bottom: 1rem;
-}
-
-.error-message {
-  font-size: 1.25rem;
-  color: #495057;
-  margin-bottom: 0.5rem;
-}
-
-.error-details {
-  color: #6c757d;
-  margin-bottom: 2rem;
 }
 
 .home-button {

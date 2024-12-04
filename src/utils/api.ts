@@ -7,6 +7,6 @@ const baseURL = import.meta.env.PUBLIC_API_BASE_URL || "";
 
 export const apiEndpoints = {
   import: {
-    file: `${baseURL}/api/v1/statements/upload`,
+    file: `${baseURL}/api/v1/statements/import`,
   },
 };

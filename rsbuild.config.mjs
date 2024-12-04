@@ -5,10 +5,18 @@ const { publicVars } = loadEnv();
 
 export default defineConfig({
   plugins: [pluginReact()],
-  source: {
-    define: publicVars,
+  environments: {
+    web: {
+      output: { target: "web" },
+      source: { entry: { index: "./src/index.client" } },
+    },
+    ssr: {
+      output: { target: "node", distPath: { root: "dist/server" } },
+      source: { entry: { index: "./src/index.server" } },
+    },
   },
-  html: {
-    title: "NetworthDB",
-  },
+  html: { template: "./src/assets/templates/react-root.html" },
+  source: { define: publicVars },
 });
+
+export const ssrUrls = ["/"];

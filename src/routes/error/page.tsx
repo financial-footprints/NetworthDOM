@@ -1,20 +1,22 @@
 import { FC } from "react";
-import { useRouteError, isRouteErrorResponse } from "react-router-dom";
 
 import errorUnknownImage from "@/assets/images/undraw_bug_fixing.svg";
 import errorNotFoundImage from "@/assets/images/undraw_taken.svg";
 import { SimpleButton } from "@/components/Button/SimpleButton";
-import { ErrorCore } from "./error_core";
+import { ErrorCore } from "@/components/Error/Core/ErrorCore";
 import "./styles.css";
 
-export const ErrorPage: FC = (): JSX.Element => {
-  const error = useRouteError();
-  const is404 = isRouteErrorResponse(error) && error.status === 404;
+interface ErrorPageProps {
+  type?: "404" | "unknown";
+}
 
+export const ErrorPage: FC<ErrorPageProps> = ({
+  type = "unknown",
+}): JSX.Element => {
   return (
     <div className="error-page flex justify-center">
       <div className="error-content">
-        {is404 ? (
+        {type === "404" ? (
           <ErrorCore
             imageSrc={errorNotFoundImage}
             title="Not Found"

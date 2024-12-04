@@ -1,0 +1,12 @@
+
+.error-message {
+  font-size: 1.25rem;
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+.error-details {
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
