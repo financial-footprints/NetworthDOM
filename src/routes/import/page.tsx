@@ -7,7 +7,7 @@ import { apiEndpoints } from "@/utils/api";
 
 import "./styles.css";
 
-const ImportPage: FC = (): JSX.Element => {
+export const ImportPage: FC = (): JSX.Element => {
   const [file, setFile] = React.useState<File | null>(null);
   const [secret, setSecret] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
