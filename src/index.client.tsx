@@ -4,7 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { AppRouter } from "./router";
-import { SimpleSidebar } from "./components/Sidebar/SimpleSidebar";
+import { Navbar } from "./components/Navbar/Navbar";
 import ErrorBoundary from "./components/Error/Boundary/ErrorBoundary";
 
 const rootElement = document.getElementById("root");
@@ -17,7 +17,7 @@ ReactDOM.hydrateRoot(
   <React.StrictMode>
     <BrowserRouter>
       <ErrorBoundary>
-        <SimpleSidebar />
+        <Navbar />
         <AppRouter />
       </ErrorBoundary>
     </BrowserRouter>

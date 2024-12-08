@@ -2,6 +2,9 @@ export interface RouteConfig {
   path: string;
   element: React.ReactNode;
   label: string;
-  showInSidebar: boolean;
+  sidebar: {
+    show: boolean;
+    icon?: React.ReactNode;
+  };
   errorElement?: React.ReactNode;
 }

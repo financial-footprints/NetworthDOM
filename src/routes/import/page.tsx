@@ -5,8 +5,6 @@ import { SimpleButton } from "@/components/Button/SimpleButton";
 import { SimpleLoader } from "@/components/Loader/SimpleLoader";
 import { apiEndpoints } from "@/utils/api";
 
-import "./styles.css";
-
 export const ImportPage: FC = (): JSX.Element => {
   const [file, setFile] = React.useState<File | null>(null);
   const [secret, setSecret] = React.useState("");

@@ -4,7 +4,6 @@ import errorUnknownImage from "@/assets/images/undraw_bug_fixing.svg";
 import errorNotFoundImage from "@/assets/images/undraw_taken.svg";
 import { SimpleButton } from "@/components/Button/SimpleButton";
 import { ErrorCore } from "@/components/Error/Core/ErrorCore";
-import "./styles.css";
 
 interface ErrorPageProps {
   type?: "404" | "unknown";
@@ -14,8 +13,8 @@ export const ErrorPage: FC<ErrorPageProps> = ({
   type = "unknown",
 }): JSX.Element => {
   return (
-    <div className="error-page flex justify-center">
-      <div className="error-content">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="text-center p-8 max-w-lg">
         {type === "404" ? (
           <ErrorCore
             imageSrc={errorNotFoundImage}

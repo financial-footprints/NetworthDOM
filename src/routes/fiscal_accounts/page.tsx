@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-export const HomePage: FC = () => {
+export const FiscalAccountsPage: FC = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
       <div className="p-8 bg-white rounded-lg shadow-md">

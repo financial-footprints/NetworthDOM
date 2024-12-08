@@ -1,0 +1,102 @@
+@media screen and (min-width: 1024px) {
+  .navbar {
+    display: none;
+  }
+
+  .sidebar {
+    @apply fixed left-0 top-0 h-screen bg-white shadow-lg;
+    width: 200px;
+    transition: width 0.3s ease;
+  }
+
+  .sidebar.collapsed {
+    width: 56px;
+  }
+
+  .sidebar-toggle-button {
+    @apply absolute -right-5 top-6 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md text-gray-600 hover:text-gray-900 transition-colors;
+    z-index: 50;
+  }
+
+  .sidebar-menu {
+    @apply mt-16 p-2 space-y-2;
+  }
+
+  .sidebar-menu-item {
+    @apply w-full;
+  }
+
+  .sidebar-menu-link {
+    @apply flex items-center rounded-lg p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors;
+    white-space: nowrap;
+    min-height: 36px;
+  }
+
+  .sidebar-icon {
+    @apply flex items-center justify-center flex-shrink-0;
+    width: 20px;
+    height: 20px;
+    margin-left: 2px;
+  }
+
+  .sidebar-icon svg {
+    @apply w-full h-full;
+  }
+
+  .sidebar-label {
+    @apply ml-3 transition-opacity duration-500 delay-200;
+  }
+
+  .collapsed .sidebar-label {
+    @apply opacity-0 pointer-events-none transition-none;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .sidebar {
+    display: none;
+  }
+
+  .navbar {
+    display: block;
+    @apply fixed top-0 left-0 right-0 bg-white shadow-md z-50;
+  }
+
+  .navbar-container {
+    @apply w-full;
+  }
+
+  .navbar-content {
+    @apply flex items-center justify-between px-4 h-16;
+  }
+
+  .navbar-logo {
+    @apply text-xl font-semibold text-gray-800 hover:text-gray-600 transition-colors;
+  }
+
+  .navbar-menu-toggle {
+    @apply p-2 text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-all;
+  }
+
+  .navbar-menu {
+    @apply absolute top-16 left-0 right-0 bg-white shadow-lg;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .navbar-menu.open {
+    max-height: calc(100vh - 4rem);
+  }
+
+  .navbar-menu-item {
+    @apply flex items-center px-4 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors rounded-lg;
+    margin: 0.6rem;
+  }
+
+  .navbar-menu-icon {
+    @apply mr-3 flex items-center justify-center;
+    width: 20px;
+    height: 20px;
+  }
+}

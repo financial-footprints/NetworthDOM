@@ -1,5 +1,4 @@
 import { FC } from "react";
-import "./styles.css";
 
 interface ErrorCoreProps {
   imageSrc: string;
@@ -17,15 +16,17 @@ export const ErrorCore: FC<ErrorCoreProps> = ({
   return (
     <>
       <div className="flex justify-center">
-        <img
-          src={imageSrc}
-          alt="Error illustration"
-          className="error-image p-8 w-[65%]"
-        />
+        <img src={imageSrc} alt="Error illustration" className="p-8 w-[65%]" />
       </div>
-      <h1 className="font-bold font-sans text-2xl">{title}</h1>
-      <p className="error-message font-medium font-sans text-base">{message}</p>
-      <p className="error-details font-normal font-sans text-sm">{details}</p>
+      <h1 className="font-bold font-sans text-3xl text-gray-800 p-4">
+        {title}
+      </h1>
+      <p className="text-xl text-gray-600 mb-2 font-medium font-sans">
+        {message}
+      </p>
+      <p className="text-gray-500 mb-8 font-normal font-sans text-sm">
+        {details}
+      </p>
     </>
   );
 };
