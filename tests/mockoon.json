@@ -1,14 +1,168 @@
 {
   "uuid": "ae54ead4-6dd6-4b63-acaf-22bf8a180f20",
-  "lastMigration": 1,
+  "lastMigration": 33,
   "name": "NetworthHTTP",
   "endpointPrefix": "",
   "latency": 0,
   "port": 8000,
   "hostname": "127.0.0.1",
   "folders": [],
-  "routes": [],
-  "rootChildren": [],
+  "routes": [
+    {
+      "uuid": "14b74963-7aff-4ffa-a33a-4f503cee31f6",
+      "type": "http",
+      "documentation": "Get fiscal accounts",
+      "method": "post",
+      "endpoint": "api/v1/fiscal_accounts",
+      "responses": [
+        {
+          "uuid": "291e3dca-e6b0-4be5-8658-c8439d4f88f9",
+          "body": "[\n  {\n    \"id\": \"bd18ce5f-962b-4596-8fa3-494d37edf71b\",\n    \"updated_at\": \"2023-05-09T14:38:27.291461\",\n    \"account_number\": \"987654321\",\n    \"max_sequence_number\": 5,\n    \"transaction_count\": 3,\n    \"balance\": 1500000,\n    \"institution_name\": \"Hdfc\",\n    \"type\": \"CheckingAccount\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Single Account Exists",
+          "headers": [
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "vary",
+              "value": "origin, access-control-request-method, access-control-request-headers"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "limit",
+              "value": "1",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "398b30d1-a6f9-4ff2-bce7-7f866c45f2f8",
+          "body": "[\n    {\n        \"id\": \"ad18ce5f-962b-4596-8fa3-494d37edf71b\",\n        \"updated_at\": \"2023-05-09T14:38:27.291461\",\n        \"account_number\": \"987654321\",\n        \"max_sequence_number\": 5,\n        \"transaction_count\": 3,\n        \"balance\": 1500000,\n        \"institution_name\": \"Hdfc\",\n        \"type\": \"CheckingAccount\"\n    },\n    {\n        \"id\": \"b28ce5f-962b-4596-8fa3-494d37edf71c\",\n        \"updated_at\": \"2023-06-10T14:38:27.291461\",\n        \"account_number\": \"123456789\",\n        \"max_sequence_number\": 0,\n        \"transaction_count\": 0,\n        \"balance\": 0,\n        \"institution_name\": \"StateBankOfIndia\",\n        \"type\": \"SavingsAccount\"\n    },\n    {\n        \"id\": \"c38ce5f-962b-4596-8fa3-494d37edf71d\",\n        \"updated_at\": \"2023-07-11T14:38:27.291461\",\n        \"account_number\": \"456789123\",\n        \"max_sequence_number\": 7,\n        \"transaction_count\": 1,\n        \"balance\": 3500000,\n        \"institution_name\": \"Icici\",\n        \"type\": \"CreditCard\"\n    },\n    {\n        \"id\": \"d48ce5f-962b-4596-8fa3-494d37edf71e\",\n        \"updated_at\": \"2023-08-12T14:38:27.291461\",\n        \"account_number\": \"789123456\",\n        \"max_sequence_number\": 49999098,\n        \"transaction_count\": 6768750,\n        \"balance\": -498712,\n        \"institution_name\": \"Axis\",\n        \"type\": \"FixedDeposit\"\n    },\n    {\n        \"id\": \"e58ce5f-962b-4596-8fa3-494d37edf71f\",\n        \"updated_at\": \"2023-09-13T14:38:27.291461\",\n        \"account_number\": \"321654987\",\n        \"max_sequence_number\": 71119,\n        \"transaction_count\": 9122,\n        \"balance\": 14,\n        \"institution_name\": \"OneCard\",\n        \"type\": \"Unknown\"\n    },\n    {\n        \"id\": \"f68ce5f-962b-4596-8fa3-494d37edf720\",\n        \"updated_at\": \"2023-10-14T14:38:27.291461\",\n        \"account_number\": \"654987321\",\n        \"max_sequence_number\": 17,\n        \"transaction_count\": 5,\n        \"balance\": 6500000,\n        \"institution_name\": \"Citi\",\n        \"type\": \"CheckingAccount\"\n    },\n    {\n        \"id\": \"g78ce5f-962b-4596-8fa3-494d37edf721\",\n        \"updated_at\": \"2023-11-15T14:38:27.291461\",\n        \"account_number\": \"987321654\",\n        \"max_sequence_number\": 7,\n        \"transaction_count\": 3,\n        \"balance\": 7500000,\n        \"institution_name\": \"IndusInd\",\n        \"type\": \"SavingsAccount\"\n    },\n    {\n        \"id\": \"h88ce5f-962b-4596-8fa3-494d37edf722\",\n        \"updated_at\": \"2023-12-16T14:38:27.291461\",\n        \"account_number\": \"123789456\",\n        \"max_sequence_number\": 8,\n        \"transaction_count\": 6,\n        \"balance\": 8500000,\n        \"institution_name\": \"Jupiter\",\n        \"type\": \"CreditCard\"\n    },\n    {\n        \"id\": \"i98ce5f-962b-4596-8fa3-494d37edf723\",\n        \"updated_at\": \"2023-01-17T14:38:27.291461\",\n        \"account_number\": \"456123789\",\n        \"max_sequence_number\": 8,\n        \"transaction_count\": 9,\n        \"balance\": 9500000,\n        \"institution_name\": \"BankOfBaroda\",\n        \"type\": \"FixedDeposit\"\n    },\n    {\n        \"id\": \"j08ce5f-962b-4596-8fa3-494d37edf724\",\n        \"updated_at\": \"2023-02-18T14:38:27.291461\",\n        \"account_number\": \"789456123\",\n        \"max_sequence_number\": 10,\n        \"transaction_count\": 1,\n        \"balance\": 10500000,\n        \"institution_name\": \"Idfc\",\n        \"type\": \"Unknown\"\n    },\n    {\n        \"id\": \"k18ce5f-962b-4596-8fa3-494d37edf725\",\n        \"updated_at\": \"2023-03-19T14:38:27.291461\",\n        \"account_number\": \"321987654\",\n        \"max_sequence_number\": 11,\n        \"transaction_count\": 5,\n        \"balance\": 11500000,\n        \"institution_name\": \"Other\",\n        \"type\": \"CheckingAccount\"\n    },\n    {\n        \"id\": \"l28ce5f-962b-4596-8fa3-494d37edf726\",\n        \"updated_at\": \"2023-04-20T14:38:27.291461\",\n        \"account_number\": \"654321987\",\n        \"max_sequence_number\": 12,\n        \"transaction_count\": 12,\n        \"balance\": 12500000,\n        \"institution_name\": \"Other\",\n        \"type\": \"SavingsAccount\"\n    },\n    {\n        \"id\": \"m38ce5f-962b-4596-8fa3-494d37edf727\",\n        \"updated_at\": \"2023-05-21T14:38:27.291461\",\n        \"account_number\": \"987654123\",\n        \"max_sequence_number\": 13,\n        \"transaction_count\": 12,\n        \"balance\": 13500000,\n        \"institution_name\": \"Other\",\n        \"type\": \"CreditCard\"\n    },\n    {\n        \"id\": \"n48ce5f-962b-4596-8fa3-494d37edf728\",\n        \"updated_at\": \"2023-06-22T14:38:27.291461\",\n        \"account_number\": \"123456987\",\n        \"max_sequence_number\": 14,\n        \"transaction_count\": 13,\n        \"balance\": 14500000,\n        \"institution_name\": \"PunjabNationalBank\",\n        \"type\": \"FixedDeposit\"\n    },\n    {\n        \"id\": \"o58ce5f-962b-4596-8fa3-494d37edf729\",\n        \"updated_at\": \"2023-07-23T14:38:27.291461\",\n        \"account_number\": \"456789321\",\n        \"max_sequence_number\": 15,\n        \"transaction_count\": 15,\n        \"balance\": 15500000,\n        \"institution_name\": \"Yes\",\n        \"type\": \"Unknown\"\n    }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Multiple (15) Accounts exist",
+          "headers": [
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "vary",
+              "value": "origin, access-control-request-method, access-control-request-headers"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "d4415d0a-423c-4cb9-af6b-0d925aed52d4",
+          "body": "[]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "No accounts exist",
+          "headers": [
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "vary",
+              "value": "origin, access-control-request-method, access-control-request-headers"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "d779993d-63ea-4293-8427-8c7f70c37dac",
+          "body": "[\n  {\n        \"id\": \"ad18ce5f-962b-4596-8fa3-494d37edf71b\",\n        \"updated_at\": \"2023-05-09T14:38:27.291461\",\n        \"account_number\": \"987654321\",\n        \"max_sequence_number\": 5,\n        \"transaction_count\": 3,\n        \"balance\": 1500000,\n        \"institution_name\": \"Hdfc\",\n        \"type\": \"CheckingAccount\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Multiple (Filtered: checking accounts only) Accounts Exist",
+          "headers": [
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "vary",
+              "value": "origin, access-control-request-method, access-control-request-headers"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": "RANDOM",
+      "streamingMode": null,
+      "streamingInterval": 0
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "14b74963-7aff-4ffa-a33a-4f503cee31f6"
+    }
+  ],
   "proxyMode": true,
   "proxyHost": "http://127.0.0.1:8001",
   "proxyRemovePrefix": false,

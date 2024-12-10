@@ -5,8 +5,11 @@
 
 const baseURL = import.meta.env.PUBLIC_API_BASE_URL || "";
 
-export const apiEndpoints = {
+export const endpoints = {
   import: {
     file: `${baseURL}/api/v1/statements/import`,
+  },
+  fiscal_accounts: {
+    list: `${baseURL}/api/v1/fiscal_accounts`,
   },
 };

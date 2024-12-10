@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { RxCross2 } from "react-icons/rx";
 import { routes } from "@/router";
 import "./styles.css";
 
-export const SimpleNavbar: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+export const SimpleNavbar: React.FC<{
+  isCollapsed: boolean;
+  setIsCollapsed: (value: boolean) => void;
+}> = ({ isCollapsed, setIsCollapsed }) => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -17,14 +18,14 @@ export const SimpleNavbar: React.FC = () => {
           </Link>
           <button
             className="navbar-menu-toggle"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            onClick={() => setIsCollapsed(!isCollapsed)}
+            aria-label={isCollapsed ? "Open menu" : "Close menu"}
           >
-            {isMenuOpen ? <RxCross2 size={20} /> : <HiMenuAlt3 size={20} />}
+            {isCollapsed ? <HiMenuAlt3 size={20} /> : <RxCross2 size={20} />}
           </button>
         </div>
 
-        <div className={`navbar-menu ${isMenuOpen ? "open" : ""}`}>
+        <div className={`navbar-menu ${isCollapsed ? "" : "open"}`}>
           {routes
             .filter((route) => route.sidebar.show)
             .map((route) => (
@@ -32,7 +33,7 @@ export const SimpleNavbar: React.FC = () => {
                 key={route.path}
                 to={route.path}
                 className="navbar-menu-item"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => setIsCollapsed(true)}
               >
                 {route.sidebar.icon && (
                   <span className="navbar-menu-icon">{route.sidebar.icon}</span>

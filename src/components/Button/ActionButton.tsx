@@ -1,13 +1,18 @@
 import React, { ButtonHTMLAttributes } from "react";
+import { ButtonVariant } from "./types";
+
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean;
+  children: React.ReactNode;
+  variant?: ButtonVariant;
 }
 
-export const SimpleButton: React.FC<ButtonProps> = ({
-  children,
+export const ActionButton: React.FC<ButtonProps> = ({
   className = "",
   fullWidth = false,
+  variant = "normal",
+  children,
   ...props
 }) => {
   return (
@@ -19,8 +24,8 @@ export const SimpleButton: React.FC<ButtonProps> = ({
             : "bg-gray-500 cursor-not-allowed"
         }
         text-white
-        py-2.5
-        px-4
+        ${variant === "thin" ? "py-1.5" : "py-2.5"}
+        ${variant === "thin" ? "px-3" : "px-4"}
         rounded-lg
         focus:outline-none
         focus:ring-2
@@ -28,7 +33,7 @@ export const SimpleButton: React.FC<ButtonProps> = ({
         focus:ring-offset-2
         transition-all
         duration-200
-        font-medium
+        ${variant === "thin" ? "text-sm" : "font-medium"}
         ${fullWidth ? "w-full" : ""}
         ${className}
       `}

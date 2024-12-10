@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 
 import { FormInput } from "@/components/Input/FormInput";
-import { SimpleButton } from "@/components/Button/SimpleButton";
-import { SimpleLoader } from "@/components/Loader/SimpleLoader";
-import { apiEndpoints } from "@/utils/api";
+import { networthHttp } from "@/utils/api/requests";
+import { ButtonLoader } from "@/components/Loader/ButtonLoader";
+import { ToggleButton } from "@/components/Button/ToggleButton";
 
 export const ImportPage: FC = (): JSX.Element => {
   const [file, setFile] = React.useState<File | null>(null);
@@ -16,16 +16,8 @@ export const ImportPage: FC = (): JSX.Element => {
     if (!file) return;
 
     setIsLoading(true);
-
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("secret", secret);
-
     try {
-      const response = await fetch(apiEndpoints.import.file, {
-        method: "POST",
-        body: formData,
-      });
+      const response = await networthHttp.import.create(file, secret);
 
       if (!response.ok) {
         throw new Error("Upload failed");
@@ -58,7 +50,7 @@ export const ImportPage: FC = (): JSX.Element => {
             onChange={(e) => setSecret(e.target.value)}
             disabled={isLoading}
           />
-          <SimpleButton
+          <ToggleButton
             type="submit"
             fullWidth
             disabled={isLoading || !file}
@@ -69,9 +61,10 @@ export const ImportPage: FC = (): JSX.Element => {
                 ? "Upload in progress..."
                 : "Upload File"
             }
-          >
-            {isLoading ? <SimpleLoader /> : "Upload File"}
-          </SimpleButton>
+            toggle={isLoading}
+            toggleOn={<ButtonLoader />}
+            toggleOff={"Upload File"}
+          />
         </form>
       </div>
     </div>

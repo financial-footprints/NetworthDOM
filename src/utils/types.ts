@@ -8,3 +8,5 @@ export interface RouteConfig {
   };
   errorElement?: React.ReactNode;
 }
+
+export type SortDirection = "asc" | "desc";

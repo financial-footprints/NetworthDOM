@@ -4,8 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { AppRouter } from "./router";
-import { Navbar } from "./components/Navbar/Navbar";
-import ErrorBoundary from "./components/Error/Boundary/ErrorBoundary";
+import { Layout } from "./components/Layout/Layout";
 
 const rootElement = document.getElementById("root");
 if (!rootElement) {
@@ -16,10 +15,7 @@ ReactDOM.hydrateRoot(
   rootElement,
   <React.StrictMode>
     <BrowserRouter>
-      <ErrorBoundary>
-        <Navbar />
-        <AppRouter />
-      </ErrorBoundary>
+      <Layout children={<AppRouter />} />
     </BrowserRouter>
   </React.StrictMode>
 );

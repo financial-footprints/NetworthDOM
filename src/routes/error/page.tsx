@@ -2,8 +2,8 @@ import { FC } from "react";
 
 import errorUnknownImage from "@/assets/images/undraw_bug_fixing.svg";
 import errorNotFoundImage from "@/assets/images/undraw_taken.svg";
-import { SimpleButton } from "@/components/Button/SimpleButton";
 import { ErrorCore } from "@/components/Error/Core/ErrorCore";
+import { ActionButton } from "@/components/Button/ActionButton";
 
 interface ErrorPageProps {
   type?: "404" | "unknown";
@@ -30,9 +30,9 @@ export const ErrorPage: FC<ErrorPageProps> = ({
             details="Please try again later or contact support if the problem persists."
           />
         )}
-        <SimpleButton onClick={() => (window.location.href = "/")}>
+        <ActionButton onClick={() => (window.location.href = "/")}>
           Go to Homepage
-        </SimpleButton>
+        </ActionButton>
       </div>
     </div>
   );

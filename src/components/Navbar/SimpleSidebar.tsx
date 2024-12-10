@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { routes } from "@/router";
 import { AiOutlineMenuUnfold, AiOutlineMenuFold } from "react-icons/ai";
 import "./styles.css";
 
-export const SimpleSidebar: React.FC = () => {
-  const [isCollapsed, setIsCollapsed] = useState(true);
-
+export const SimpleSidebar: React.FC<{
+  isCollapsed: boolean;
+  setIsCollapsed: (value: boolean) => void;
+}> = ({ isCollapsed, setIsCollapsed }) => {
   return (
     <nav className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
       <button
